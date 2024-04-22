@@ -1,14 +1,14 @@
 # wavenext_pytorch
 ## WaveNext: ConvNext-Based fast neural vocoder without ISTFT layer
-### Autorhs: Takuma Okamoto1, Haruki Yamashita2,1, Yamato Ohtani1, Tomoki Toda3,1, and Hisashi Kawai1
+### Autorhs: Takuma Okamoto, Haruki Yamashita Yamato Ohtani1, Tomoki Toda and Hisashi Kawai1
 
 Unofficial implementation of wavenext neural vocoder(WIP)
 
-[WaveNext](https://ieeexplore.ieee.org/document/10389765) proposed to replace the ISTFT final layer of Vocos with a linear layer without bias followed by a reshape op. As this is a slight modification of vocos we're  just using the official vocos implementation adding the WaveNext head in wavenext_pytorch/vocos/heads.py 
+[WaveNext](https://ieeexplore.ieee.org/document/10389765) proposed to replace the ISTFT final layer of Vocos with a linear layer without bias followed by a reshape op. As this is a slight modification of vocos we're  just using the [official vocos implementation](https://github.com/gemelo-ai/vocos) and adding the WaveNext head in wavenext_pytorch/vocos/heads.py 
 
 ![WaveNext](wavenext_architecture.png)
 
-We also add the modifications in the feature extraction and mel spec loss to make it compatible with the HifiGAN features, However, you can also use the original features from Vocos. 
+We also added the modifications in the feature extraction and mel spec loss to make it compatible with the HifiGAN features, However, you can also use the original features from Vocos. 
 
 ## Installation
 
@@ -47,13 +47,24 @@ training pipeline.
 
 ## Todo
 
-[] Add tensorboards.
-[] Add encodec config.
+- [ ] Add tensorboards.
+- [ ] Add encodec config.
 
 ## Citation
 
 If this code contributes to your research, please cite the work:
-
+```
+@INPROCEEDINGS{10389765,
+  author={Okamoto, Takuma and Yamashita, Haruki and Ohtani, Yamato and Toda, Tomoki and Kawai, Hisashi},
+  booktitle={2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)}, 
+  title={WaveNeXt: ConvNeXt-Based Fast Neural Vocoder Without ISTFT layer}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={Fourier transforms;Vocoders;Conferences;Automatic speech recognition;ConvNext;end-to-end text-to-speech;linear layer-based upsampling;neural vocoder;Vocos},
+  doi={10.1109/ASRU57964.2023.10389765}}
+```
 
 
 ## License
