@@ -1,0 +1,6 @@
+SLURM
+filelists
+configs/*_local.yaml
+*.pth
+*.pt
+*.ckpt
