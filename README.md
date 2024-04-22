@@ -6,7 +6,7 @@ Unofficial implementation of wavenext neural vocoder(WIP)
 
 [WaveNext](https://ieeexplore.ieee.org/document/10389765) proposed to replace the ISTFT final layer of Vocos with a linear layer without bias followed by a reshape op. As this is a slight modification of vocos we're  just using the official vocos implementation adding the WaveNext head in wavenext_pytorch/vocos/heads.py 
 
-![WaveNext](wavenext_architecture.jpg)
+![WaveNext](wavenext_architecture.png)
 
 We also add the modifications in the feature extraction and mel spec loss to make it compatible with the HifiGAN features, However, you can also use the original features from Vocos. 
 
