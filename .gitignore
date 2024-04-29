@@ -4,3 +4,4 @@ configs/*_local.yaml
 *.pth
 *.pt
 *.ckpt
+*.pyc
