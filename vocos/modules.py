@@ -202,7 +202,7 @@ def safe_log(x: torch.Tensor, clip_val: float = 1e-7) -> torch.Tensor:
     Returns:
         Tensor: Element-wise logarithm of the input tensor with clipping applied.
     """
-    return torch.log(torch.clip(x, min=clip_val))
+    return torch.log(torch.clip(x, min=float(clip_val)))
 
 
 def symlog(x: torch.Tensor) -> torch.Tensor:
