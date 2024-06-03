@@ -1,5 +1,5 @@
 # coding: utf-8
-
+# src https://github.com/gemelo-ai/vocos/issues/38
 import argparse
 import logging
 import os
@@ -12,7 +12,7 @@ import yaml
 from torch import nn
 
 from vocos.pretrained import Vocos
-
+from vocos.loss import MelSpecReconstructionLoss
 
 DEFAULT_OPSET_VERSION = 15
 _LOGGER = logging.getLogger("export_onnx")
@@ -51,6 +51,8 @@ def export_generator(config_path, checkpoint_path, output_dir, opset_version):
         num_warmup_steps=params["num_warmup_steps"],
         mel_loss_coeff=params["mel_loss_coeff"],
         mrd_loss_coeff=params["mrd_loss_coeff"],
+        melspec_loss=MelSpecReconstructionLoss
+
     )
 
     if checkpoint_path.endswith(".bin"):
@@ -85,10 +87,6 @@ def export_generator(config_path, checkpoint_path, output_dir, opset_version):
         export_params=True,
         do_constant_folding=True,
      )
-
-    # Using the new dynamo export
-    #export_output = torch.onnx.dynamo_export(model, dummy_input)
-    #export_output.save(onnx_path)
     
     return onnx_path
 
