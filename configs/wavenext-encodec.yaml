@@ -57,6 +57,19 @@ model:
         hop_length: 320
         padding: same
 
+    melspec_loss:
+      class_path: vocos.loss.MelSpecReconstructionLoss
+      init_args:
+        sample_rate: 22050
+        n_fft: 1024
+        hop_length: 256
+        n_mels: 128
+        f_min: 0
+        f_max: 11025
+        norm: "slaney"
+        mel_scale: "slaney"
+        clip_val: 1e-5
+
 trainer:
   logger:
     class_path: pytorch_lightning.loggers.TensorBoardLogger
