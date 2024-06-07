@@ -108,7 +108,7 @@ class WaveNextHead(FourierHead):
         x = self.linear_1(x)
         x = self.linear_2(x)
         audio = x.view(B,-1) # / 100
-        print("max amplitude: ", audio.max().item())
+        #print("max amplitude: ", audio.max().item())
         audio = torch.clip(audio, min=-1.0, max=1.0)
         return audio
 
