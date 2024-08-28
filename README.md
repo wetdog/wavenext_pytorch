@@ -45,10 +45,20 @@ python train.py -c configs/wavenext.yaml
 Refer to [Pytorch Lightning documentation](https://lightning.ai/docs/pytorch/stable/) for details about customizing the
 training pipeline.
 
+## Trained checkpoints. 
+
+Pre-trained models
+
+| Model Name                                                             | Dataset       | Training Iterations | Parameters 
+|------------------------------------------------------------------------|---------------|-------------------|------------|
+| [BSC-LT/wavenext-mel](https://huggingface.co/BSC-LT/wavenext-mel)| LibriTTS + LJSpeech + openslr69 + festcat | 1M | 13.68M |
+
+
+
 ## Todo
 
-- [ ] Add tensorboards.
-- [ ] Add encodec config.
+- [X] Add tensorboards.
+- [X] Add encodec config.
 
 ## Citation
 
